@@ -26,6 +26,18 @@ config :phoenix, :template_engines,
     slim: PhoenixSlime.Engine,
     slime: PhoenixSlime.Engine
 
+config :ueberauth, Ueberauth,
+  providers: [
+    auth0: {Ueberauth.Strategy.Auth0, []}
+]
+
+config :oauth2,
+  warn_missing_serializer: false,
+  serializers: %{
+    "application/vnd.api+json" => Poison,
+    "application/json" => Poison
+  }
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"

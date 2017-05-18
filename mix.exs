@@ -39,7 +39,11 @@ defmodule GreenMonster.Mixfile do
   end
 
   defp more_deps do
-    [{:phoenix_slime, "~> 0.8.0"}]
+    [{:phoenix_slime, "~> 0.8.0"},
+     {:auth0_ex, "~> 0.1"},
+     {:ueberauth, "~> 0.4"},
+     {:ueberauth_auth0, "~> 0.1"},
+     {:oauth2, "~> 0.9"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

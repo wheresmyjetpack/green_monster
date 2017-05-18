@@ -19,7 +19,7 @@ html lang="en"
         #navbarSupportedContent.collapse.navbar-collapse
           ul.navbar-nav.ml-auto
             li
-              a.nav-link href="/" Button
+              a.nav-link href="#{session_path(@conn, :request)}" Sign In
     .container
       = render @view_module, @view_template, assigns
     .container
