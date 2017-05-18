@@ -19,6 +19,12 @@ defmodule GreenMonster.Web.Router do
     get "/", PageController, :index
   end
 
+  scope "/auth", GreenMonster.Web do
+    pipe_through :browser
+    get  "/signin", SessionController, :request
+    get  "/:provider/callback", SessionController, :callback
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", GreenMonster.Web do
   #   pipe_through :api
