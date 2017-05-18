@@ -1,0 +1,39 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta name="description" content=""
+    meta name="author" content=""
+
+    title Hello GreenMonster!
+    link rel="stylesheet" href="#{static_path(@conn, "/dist/app.css")}"
+
+  body
+    nav.navbar.navbar-toggleable-sm.navbar-inverse.bg-primary.mb-3
+      .container
+        button.navbar-toggler.navbar-toggler-right type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+          span.navbar-toggler-icon
+        = link "Myproject", to: page_path(@conn, :index), class: "navbar-brand"
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto
+            li
+              a.nav-link href="/" Button
+    .container
+      = render @view_module, @view_template, assigns
+    .container
+      main role="main"
+        .jumbotron.text-center
+          h2 Welcome to Myproject!
+          p.lead Give me all of your monies pls
+        h3 Application colors
+        .mt-3.d-flex.flex-wrap.justify-content-center.align-items-center
+          button.btn.m-3.btn-primary type="button" Primary
+          button.btn.m-3.btn-secondary type="button" Secondary
+          button.btn.m-3.btn-success type="button" Success
+          button.btn.m-3.btn-info type="button" Info
+          button.btn.m-3.btn-warning type="button" Warning
+          button.btn.m-3.btn-danger type="button" Danger
+          button.btn.m-3.btn-link type="button" Link
+    script src="#{static_path(@conn, "/dist/app.js")}"
